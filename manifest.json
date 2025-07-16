@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "PhishShield",
+  "version": "1.0",
+  "description": "A extension that blocks phishing websites and helps users identify potential phishing sites.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "notifications",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PhishShield",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

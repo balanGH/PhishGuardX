@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>PhishShield</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 250px;
+      padding: 15px;
+      background-image: url("icon.png");
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 50px 50px;
+      margin-top: 60px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 8px 12px;
+      cursor: pointer;
+      width: 100%;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h4>PhishShield</h4>
+  <p>Checks current tab URL for phishing keywords.</p>
+  <button id="scanBtn">Scan Current URL</button>
+  <div id="result"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
