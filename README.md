@@ -1,4 +1,4 @@
-# PhishShield
+# PhishGuardX
 
 **A Secure Browser Extension Powered by LLMs for Real-Time Phishing Detection in URLs and Emails**
 
@@ -24,7 +24,7 @@
 
 ## Project Overview
 
-PhishShield is a final-year project that aims to provide a real-time, evidence-based phishing detection tool via a **browser extension**. It uses **DistilBERT-based models** for classifying phishing URLs and suspicious sentences inside emails or webpage content, providing users with actionable visual alerts and explanations.
+PhishGuardX is a final-year project that aims to provide a real-time, evidence-based phishing detection tool via a **browser extension**. It uses **DistilBERT-based models** for classifying phishing URLs and suspicious sentences inside emails or webpage content, providing users with actionable visual alerts and explanations.
 
 ---
 
