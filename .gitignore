@@ -3,6 +3,10 @@
 # dependencies
 node_modules/
 
+venv/
+
+distilbert_url_model_demo.zip
+
 # Expo
 .expo/
 dist/
