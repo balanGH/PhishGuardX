@@ -1,29 +1,38 @@
-const phishingKeywords = ["login", "secure", "verify", "account", "update", "password", "bank", "paypal"];
+// background.js — Service Worker
+console.log("🧠 PhishGuardX Service Worker Active");
 
-function checkUrl(url) {
-  if (!url) return false;
-  return phishingKeywords.some(keyword => url.toLowerCase().includes(keyword));
-}
+const BACKEND_URL = "http://10.5.177.63:5001/analyze"; // change to your backend endpoint
 
-function alertPhishing(tabId, url) {
-  chrome.scripting.executeScript({
-    target: { tabId },
-    func: (url) => alert(`⚠️ Warning: Possible phishing URL detected!\n\n${url}`),
-    args: [url]
-  }).catch(e => console.error('Injection failed:', e));
-}
+// Listen for messages from content scripts
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (msg.type === "feature_extraction") {
+    console.log("📩 Received Features from", sender.tab?.url);
+    console.log("🧩 Extracted Data:", msg.data);
 
-chrome.tabs.onActivated.addListener(async ({ tabId }) => {
-  try {
-    const tab = await chrome.tabs.get(tabId);
-    if (checkUrl(tab.url)) alertPhishing(tabId, tab.url);
-  } catch (e) {
-    console.error(e);
+    // Optional: Send to backend for analysis
+    sendToBackend(msg.url, msg.data)
+      .then(result => {
+        console.log("✅ Backend response:", result);
+        sendResponse({ status: "ok", result });
+      })
+      .catch(err => {
+        console.error("❌ Backend error:", err);
+        sendResponse({ status: "error", error: err.message });
+      });
+
+    return true; // Keep message channel open for async response
   }
 });
 
-chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
-  if (changeInfo.url && checkUrl(changeInfo.url)) {
-    alertPhishing(tabId, changeInfo.url);
-  }
-});
+// Send extracted features to backend
+async function sendToBackend(url, data) {
+  const payload = { url, features: data };
+  const res = await fetch(BACKEND_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  if (!res.ok) throw new Error(`Backend returned ${res.status}`);
+  return res.json();
+}

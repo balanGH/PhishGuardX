@@ -1,0 +1,2 @@
+"url","url_length","num_dots","num_subdomains","has_at_symbol","has_hyphen_in_domain","uses_https","is_ip_address","uses_nonstandard_port","has_iframe","has_password_input","has_inline_script","anchor_text_mismatch","external_favicon","right_click_blocked","has_popups"
+"https://acoe.annauniv.edu/sems/",31,2,1,false,false,true,false,"",false,false,false,true,false,false,true

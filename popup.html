@@ -1,36 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>PhishGuardX</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      width: 250px;
-      padding: 15px;
-      background-image: url("icon.png");
-      background-repeat: no-repeat;
-      background-position: center top;
-      background-size: 50px 50px;
-      margin-top: 60px;
-    }
-    button {
-      margin-top: 15px;
-      padding: 8px 12px;
-      cursor: pointer;
-      width: 100%;
-    }
-    #result {
-      margin-top: 15px;
-      font-weight: bold;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhishGuardX - Security Assessment</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h4>PhishGuardX</h4>
-  <p>Checks current tab URL for phishing keywords.</p>
-  <button id="scanBtn">Scan Current URL</button>
-  <div id="result"></div>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1 class="popup-title">
+  <img src="icons/icon48.png" alt="PhishGuardX logo" class="popup-logo" width="32" height="32">
+  PhishGuardX
+      </h1>
+      <p class="popup-subtitle">URL Security Assessment</p>
+    </header>
+
+    <section class="url-section">
+      <label class="section-label">Current URL</label>
+      <div class="url-display">
+        <span id="current-url" class="url-text">Loading URL...</span>
+        <button id="copy-btn" class="copy-button" title="Copy URL to clipboard">
+          <span class="copy-icon"></span>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="status-section">
+      <label class="section-label">Status</label>
+      <div id="status-box" class="status-box">
+        <div id="status-icon" class="status-icon"></div>
+        <p id="status-text" class="status-text">A waiting assessment...</p>
+      </div>
+    </section>
+
+    <!-- Move assessment buttons here, below status -->
+    <section class="assessment-section">
+      <label class="section-label">Your Feedback</label>
+      <div class="assessment-controls">
+        <button id="thumbs-up" class="assessment-btn legitimate-btn" title="Mark as legitimate">
+          <span class="btn-icon">👍</span>
+          <span class="btn-text">Legitimate</span>
+        </button>
+        <button id="thumbs-down" class="assessment-btn phishing-btn" title="Mark as phishing">
+          <span class="btn-icon">👎</span>
+          <span class="btn-text">Phishing</span>
+        </button>
+      </div>
+    </section>
+
+        <!-- Screenshot Button -->
+    <section class="screenshot-section">
+      <div class="screenshot-box">
+        <button id="screenshot-btn" class="screenshot-btn">
+          📸 Take Screenshot
+        </button>
+      </div>
+    </section>
+
+
+    <footer class="popup-footer">
+      <p class="footer-text">Last updated: <span id="timestamp"></span></p>
+    </footer>
+  </div>
 
   <script src="popup.js"></script>
 </body>
