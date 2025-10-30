@@ -1,7 +1,7 @@
 // background.js — Service Worker
 console.log("🧠 PhishGuardX Service Worker Active");
 
-const BACKEND_URL = "http://10.5.177.63:5001/analyze"; // change to your backend endpoint
+const BACKEND_URL = "http://10.11.155.187:8081/detect"; // change to your backend endpoint
 
 // Listen for messages from content scripts
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
