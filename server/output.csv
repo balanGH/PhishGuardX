@@ -1,2 +1,6 @@
 "url","url_length","num_dots","num_subdomains","has_at_symbol","has_hyphen_in_domain","uses_https","is_ip_address","uses_nonstandard_port","has_iframe","has_password_input","has_inline_script","anchor_text_mismatch","external_favicon","right_click_blocked","has_popups"
 "https://acoe.annauniv.edu/sems/",31,2,1,false,false,true,false,"",false,false,false,true,false,false,true
+"https://chatgpt.com/c/68d538f0-5060-8321-8684-20d81ceebba4",58,1,0,false,false,true,false,"",true,false,true,true,true,false,true
+"https://www.google.com/search?q=fraek&oq=fraek&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQLhiABDIJCAIQABgKGIAEMgcIAxAAGIAEMhIIBBAuGAoYxwEYsQMY0QMYgAQyDAgFEC4YChixAxiABDIMCAYQLhgKGLEDGIAEMgwIBxAAGAoYsQMYgAQyCQgIEAAYChiABNIBCDE2MTRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",260,2,1,false,false,true,false,"",false,false,true,true,true,false,true
+"https://www.youtube.com/",24,2,1,false,false,true,false,"",true,false,true,true,false,false,true
+"https://acoe.annauniv.edu/sems/login/student",44,2,1,false,false,true,false,"",false,true,true,true,false,false,true
