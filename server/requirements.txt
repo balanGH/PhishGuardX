@@ -1,0 +1,15 @@
+gradio
+torch
+torchvision
+transformers
+pytesseract
+pillow
+requests
+beautifulsoup4
+python-whois
+selenium
+webdriver-manager
+fastapi
+uvicorn
+
+# https://digi.bib.uni-mannheim.de/tesseract/
